@@ -9,21 +9,19 @@ import Answer from './components/answer'
 import { TabNavigator, StackNavigator } from 'react-navigation'
 import { setLocalNotification } from './utils/helpers'
 
+// const Tabs = TabNavigator({
+//     Decks: {
+//         screen: DeckList
+//     },
+// });
 
-const Tabs = TabNavigator({
-    Decks: {
-        screen: DeckList
+const MainNavigator = StackNavigator({
+    Home: {
+      screen: DeckList,
     },
     NewDeck: {
         screen: NewDeck
     },
-});
-
-const MainNavigator = StackNavigator({
-    Home: {
-      screen: Tabs,
-    },
-
     IndividualDeck: {
       screen: IndividualDeck,
     },
@@ -43,13 +41,15 @@ const MainNavigator = StackNavigator({
 
 export default class App extends React.Component {
 
-  componentDidMount () {
-     setLocalNotification()
-  }
-  render() {
-    return (
-        <MainNavigator />
-    );
-  }
+    componentDidMount () {
+        setLocalNotification()
+
+    }
+
+    render() {
+        return (
+            <MainNavigator />
+        );
+    }
 }
 

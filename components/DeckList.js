@@ -52,11 +52,13 @@ export default class DeckList extends Component {
     }
 
     componentDidMount(){
+        //api.clearAll()
         this.getAllDecks()
     }
 
+
     updateData = () => {
-       this.getAllDecks()
+        this.getAllDecks()
     }
 
 
@@ -66,6 +68,15 @@ export default class DeckList extends Component {
                       updateData={this.updateData}
         />
     }
+
+    handlePress = () => {
+        this.props.navigation.navigate(
+            'NewDeck',
+            {
+                updateData:this.updateData
+            })
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -74,6 +85,9 @@ export default class DeckList extends Component {
                     keyExtractor = { (item) => item.title}
                     renderItem = {this.renderItem}
                 />
+                <TouchableOpacity onPress={() => this.handlePress('correct')}>
+                    <Text style={styles.btn}>New Deck</Text>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -97,6 +111,14 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 25,
+    },
+    btn:{
+        width:250,
+        margin: 10,
+        padding:10,
+        textAlign:'center',
+        borderColor:'#d6d7da',
+        borderWidth:2,
     }
 
 });

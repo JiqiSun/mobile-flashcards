@@ -26,9 +26,9 @@ export const addCardToDeck = (title, card) => {
 
 }
 
-// export const clearAll = () => {
-//     return AsyncStorage.clear()
-// }
+export const clearAll = () => {
+    return AsyncStorage.clear()
+}
 
 
 

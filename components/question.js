@@ -11,8 +11,8 @@ import * as api from '../utils/api'
 export default class Question extends Component {
 
     state = {
-        question:'Input your question',
-        answer:'Input your answer',
+        question:'',
+        answer:'',
     }
 
     addQuestion = (input) => {
@@ -49,11 +49,13 @@ export default class Question extends Component {
                 <TextInput
                     style={styles.box}
                     value = {question}
+                    placeholder = {'Your question'}
                     onChangeText = {this.addQuestion}
                 />
                 <TextInput
                     style={styles.box}
                     value = {answer}
+                    placeholder = {'Your answer'}
                     onChangeText = {this.addAnswer}
                 />
                 <TouchableOpacity onPress={this.handlePress}>

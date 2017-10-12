@@ -14,7 +14,7 @@ import * as api from '../utils/api'
 
 export default class NewDeck extends Component {
     state = {
-        input: 'Deck Title',
+        input: '',
         cards:[]
     }
 
@@ -27,10 +27,12 @@ export default class NewDeck extends Component {
         api.getDeck(this.state.input).then((data)=>{
             this.setState({cards:data})
         })
+        this.props.navigation.state.params.updateData()
         this.props.navigation.navigate(
             'IndividualDeck',
             { title: this.state.input,
-              cards: this.state.cards.length
+              cards: this.state.cards.length,
+              updateData: this.props.navigation.state.params.updateData,
             })
     }
 
@@ -43,6 +45,7 @@ export default class NewDeck extends Component {
                 </Text>
                 <TextInput
                     style={styles.box}
+                    placeholder = {'Deck Title'}
                     value = {input}
                     onChangeText = {this.handleTextChange}
                 />
