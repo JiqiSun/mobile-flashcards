@@ -6,18 +6,11 @@ import { View,
     Dimensions,
 } from 'react-native'
 import * as api from '../utils/api'
-import { clearLocalNotification,setLocalNotification} from "../utils/helpers";
 
 export default class Quiz extends Component {
 
     state = {
-        data:{title:'',
-              questions:[
-                  {question:'',
-                   answer: ''
-                  }
-              ]
-             },
+        data:[],
         index: 1,
         correct:0,
     }
@@ -75,7 +68,7 @@ export default class Quiz extends Component {
                     {index} / {this.props.navigation.state.params.cards}
                 </Text>
                 <Text style={styles.title}>
-                    {data['questions'][index-1]['question']}
+                    {data.length===0 ? null:(data['questions'][index-1]['question'])}
                 </Text>
                 <TouchableOpacity onPress={this.showAnswer}>
                     <Text style={styles.btn}>Show Answer</Text>

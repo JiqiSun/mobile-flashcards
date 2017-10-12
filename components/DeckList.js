@@ -21,7 +21,7 @@ class Lists extends Component {
                     <Text style={styles.title}>{this.props.title}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.handlePress}>
-                    <Text>{this.props.questions.length} cards</Text>
+                    <Text>{this.props.questions ? (this.props.questions.length):null} cards</Text>
                 </TouchableOpacity>
             </View>
         )
