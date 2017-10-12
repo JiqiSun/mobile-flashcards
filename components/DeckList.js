@@ -18,7 +18,7 @@ class Lists extends Component {
         return (
             <View style={styles.box}>
                 <TouchableOpacity onPress={this.handlePress}>
-                    <Text style={styles.title}>{this.props.title}</Text>
+                    <Text style={styles.title}>{this.props.title ? (this.props.title):null}</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={this.handlePress}>
                     <Text>{this.props.questions ? (this.props.questions.length):null} cards</Text>

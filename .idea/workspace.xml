@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7fcc38dc-a44d-4d4f-8dbe-00822fcd72c2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/DeckList.js" afterPath="$PROJECT_DIR$/components/DeckList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/quiz.js" afterPath="$PROJECT_DIR$/components/quiz.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,8 +31,8 @@
       <file leaf-file-name="DeckList.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/DeckList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+            <state relative-caret-position="450">
+              <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -100,8 +98,8 @@
         <option value="$PROJECT_DIR$/components/IndividualDeck.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/utils/api.js" />
-        <option value="$PROJECT_DIR$/components/DeckList.js" />
         <option value="$PROJECT_DIR$/components/quiz.js" />
+        <option value="$PROJECT_DIR$/components/DeckList.js" />
       </list>
     </option>
   </component>
@@ -200,12 +198,12 @@
       <updated>1507733422027</updated>
       <workItem from="1507733424548" duration="2447000" />
       <workItem from="1507752080673" duration="1497000" />
-      <workItem from="1507832260360" duration="1255000" />
+      <workItem from="1507832260360" duration="1395000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5199000" />
+    <option name="totallyTimeSpent" value="5339000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2551" y="332" width="1938" height="1048" extended-state="6" />
@@ -431,8 +429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/DeckList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="68" column="14" lean-forward="false" selection-start-line="68" selection-start-column="14" selection-end-line="68" selection-end-column="14" />
+        <state relative-caret-position="450">
+          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
