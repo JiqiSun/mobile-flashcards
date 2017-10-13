@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Quiz from './quiz'
-import Question from './question'
+import Quiz from './Quiz'
+import Question from './Question'
 import {View,
         Text,
         TouchableOpacity,
@@ -70,12 +70,14 @@ export default class IndividualDeck extends Component {
     }
 
     startQuiz = () => {
-        this.props.navigation.navigate(
-            'Quiz',
-            {
-                title: this.state.title,
-                cards: this.state.cards
-            })
+        if(this.props.navigation.state.params.cards!==0 || this.state.cards!==0){
+            this.props.navigation.navigate(
+                'Quiz',
+                {
+                    title: this.state.title,
+                    cards: this.state.cards
+                })
+        }
         clearLocalNotification().then(setLocalNotification)
     }
 

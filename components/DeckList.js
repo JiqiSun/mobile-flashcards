@@ -6,7 +6,7 @@ import IndividualDeck from './IndividualDeck'
 class Lists extends Component {
 
     handlePress = () => {
-        if (this.props.questions.length){
+        if (this.props.title){
             this.props.navigation.navigate(
                 'IndividualDeck',
                 { title: this.props.title,
@@ -19,7 +19,7 @@ class Lists extends Component {
     render(){
         return (
             <View>
-                { this.props.questions.length !== 0
+                { this.props.title
                     ?
                     ( <View style={styles.box}>
                         <TouchableOpacity onPress={this.handlePress}>
