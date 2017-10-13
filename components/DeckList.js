@@ -6,23 +6,28 @@ import IndividualDeck from './IndividualDeck'
 class Lists extends Component {
 
     handlePress = () => {
-        this.props.navigation.navigate(
-            'IndividualDeck',
-            { title: this.props.title,
-              cards: this.props.questions.length,
-              updateData: this.props.updateData
-            })
+        if (this.props.questions.length){
+            this.props.navigation.navigate(
+                'IndividualDeck',
+                { title: this.props.title,
+                    cards: this.props.questions.length,
+                    updateData: this.props.updateData
+                })
+        }
     }
 
     render(){
         return (
-            <View style={styles.box}>
-                <TouchableOpacity onPress={this.handlePress}>
-                    <Text style={styles.title}>{this.props.title ? (this.props.title):null}</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={this.handlePress}>
-                    <Text>{this.props.questions ? (this.props.questions.length):null} cards</Text>
-                </TouchableOpacity>
+            <View>
+                { this.props.questions.length !== 0
+                    ?
+                    ( <View style={styles.box}>
+                        <TouchableOpacity onPress={this.handlePress}>
+                            <Text style={styles.title}>{this.props.title}</Text>
+                            <Text style={styles.cards}>{this.props.questions.length} cards</Text>
+                        </TouchableOpacity>
+                      </View>) : null
+                }
             </View>
         )
 
@@ -111,6 +116,11 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 25,
+        textAlign:'center',
+    },
+    cards: {
+        fontSize: 15,
+        textAlign:'center',
     },
     btn:{
         width:250,

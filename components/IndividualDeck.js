@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Quiz from './quiz'
 import Question from './question'
-import {
+import {View,
         Text,
         TouchableOpacity,
         StyleSheet,
@@ -9,7 +9,33 @@ import {
         Animated
 } from 'react-native'
 import * as api from '../utils/api'
-import { clearLocalNotification,setLocalNotification} from "../utils/helpers";
+import { clearLocalNotification,setLocalNotification} from "../utils/helpers"
+import { NavigationActions } from 'react-navigation'
+
+class HeaderBackHome extends React.Component {
+
+    reset = () => {
+        const resetAction = NavigationActions.reset({
+            index: 0,
+            actions: [
+                NavigationActions.navigate({ routeName: 'Home'}),
+            ]
+        })
+
+        return this.props.navigation.dispatch(resetAction)
+    }
+
+    render(){
+        return(
+            <View>
+                <TouchableOpacity onPress={this.reset}>
+                    <Text>Back to home</Text>
+                </TouchableOpacity>
+            </View>
+        )
+    }
+}
+
 
 export default class IndividualDeck extends Component {
 
@@ -18,6 +44,12 @@ export default class IndividualDeck extends Component {
         cards: this.props.navigation.state.params.cards,
         opacity: new Animated.Value(0),
 
+    }
+
+    componentDidMount() {
+        const {opacity} = this.state
+        Animated.timing(opacity,{toValue:1, duration:1000})
+            .start()
     }
 
     addCard = () => {
@@ -47,12 +79,11 @@ export default class IndividualDeck extends Component {
         clearLocalNotification().then(setLocalNotification)
     }
 
-    componentDidMount() {
-        const {opacity} = this.state
-        Animated.timing(opacity,{toValue:1, duration:1000})
-            .start()
+    static navigationOptions = ({ navigation, screenProps }) => ({
+        title: navigation.state.params.title,
+        headerLeft: <HeaderBackHome navigation={navigation} />,
+    })
 
-    }
     render() {
         const {title, cards, opacity} = this.state
         return (
@@ -74,6 +105,7 @@ export default class IndividualDeck extends Component {
         )
     }
 }
+
 
 const styles = StyleSheet.create({
     container: {
