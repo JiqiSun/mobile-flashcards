@@ -8,32 +8,6 @@ import DisplayScore from './components/displayScore'
 import Answer from './components/answer'
 import { TabNavigator, StackNavigator } from 'react-navigation'
 import { setLocalNotification } from './utils/helpers'
-import { NavigationActions } from 'react-navigation'
-
-class HeaderBackArrow extends React.Component {
-
-    reset = () => {
-        const resetAction = NavigationActions.reset({
-            index: 0,
-            actions: [
-                NavigationActions.navigate({ routeName: 'Home'}),
-            ]
-        })
-
-        return this.props.navigation.dispatch(resetAction)
-    }
-
-    render(){
-        return(
-            <View>
-                <TouchableOpacity>
-                    <Text>Back to home</Text>
-                </TouchableOpacity>
-            </View>
-        )
-    }
-}
-
 
 // const Tabs = TabNavigator({
 //     Decks: {
